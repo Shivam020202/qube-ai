@@ -405,75 +405,15 @@ function PlatformArchitecture() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative aspect-square rounded-3xl bg-gradient-to-br from-purple-50 to-blue-50 border border-purple-100 p-8 overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+            <div className="relative aspect-square rounded-3xl bg-transparent p-4 flex items-center justify-center">
+              {/* Glow effect behind illustration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-full blur-[80px]"></div>
 
-              {/* Architecture Diagram Mock */}
-              <div className="relative z-10 h-full flex flex-col justify-between">
-                {/* Top Layer - Data Sources */}
-                <div className="flex gap-3 justify-center">
-                  {["Database", "Cloud", "API", "Files"].map((source, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ y: -20, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ delay: idx * 0.1, duration: 0.5 }}
-                      className="bg-white rounded-xl p-3 shadow-md flex-1 text-center"
-                    >
-                      <div className="w-8 h-8 bg-blue-100 rounded-lg mx-auto mb-2"></div>
-                      <div className="text-xs font-semibold text-gray-700">
-                        {source}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Connection Lines */}
-                <div className="flex justify-center my-4">
-                  <div className="w-px h-12 bg-gradient-to-b from-purple-300 to-purple-500"></div>
-                </div>
-
-                {/* Middle Layer - AI Engine */}
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                  className="bg-gradient-to-r from-purple-500 to-indigo-600 rounded-2xl p-6 text-white text-center shadow-xl"
-                >
-                  <div className="w-12 h-12 bg-white/20 rounded-xl mx-auto mb-3 flex items-center justify-center">
-                    <Brain className="text-white" size={24} />
-                  </div>
-                  <div className="font-bold text-sm">
-                    QubeAI Intelligence Layer
-                  </div>
-                  <div className="text-xs opacity-90 mt-1">
-                    Semantic Understanding • Correlation • Insights
-                  </div>
-                </motion.div>
-
-                {/* Connection Lines */}
-                <div className="flex justify-center my-4">
-                  <div className="w-px h-12 bg-gradient-to-b from-purple-500 to-purple-300"></div>
-                </div>
-
-                {/* Bottom Layer - Outputs */}
-                <div className="grid grid-cols-3 gap-3">
-                  {["Analytics", "Chat", "Actions"].map((output, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ y: 20, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.6 + idx * 0.1, duration: 0.5 }}
-                      className="bg-white rounded-xl p-3 shadow-md text-center"
-                    >
-                      <div className="w-8 h-8 bg-purple-100 rounded-lg mx-auto mb-2"></div>
-                      <div className="text-xs font-semibold text-gray-700">
-                        {output}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+              <img
+                src="/images/platform_architecture.png"
+                alt="QubeAI Platform Architecture"
+                className="relative z-10 w-full h-full object-contain drop-shadow-2xl transition-transform duration-700 hover:scale-105 rounded-2xl"
+              />
             </div>
           </motion.div>
         </div>
@@ -484,152 +424,133 @@ function PlatformArchitecture() {
 
 function RealWorldApplication() {
   return (
-    <section className="section bg-gray-50/50">
+    <section className="section bg-white pt-20 pb-20">
       <div className="container px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
         >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-purple-600 text-xs font-semibold mb-4">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+            </span>
+            Live Use Cases
+          </div>
           <h2 className="text-3xl md:text-5xl mb-4 text-gray-900">
-            See QubeAI in Action
+            Intelligence in <span className="text-gradient">Action</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Real-world applications transforming how teams work
+            See how enterprises transform their workflow with QubeAI.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Use Case 1 */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Use Case 1: Sales */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100"
+            className="group relative rounded-3xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-xl hover:shadow-purple-100/50 transition-all duration-500"
           >
-            <div className="relative h-64 bg-gradient-to-br from-blue-500 to-indigo-600 p-8">
-              <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-              <div className="relative z-10">
-                <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold mb-4">
-                  Sales Intelligence
-                </div>
-                <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
-                      <MessageSquare size={16} />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-white text-sm font-medium mb-1">
-                        "Show me all high-value leads from Q4"
-                      </div>
-                      <div className="flex gap-2">
-                        <div className="h-2 bg-white/30 rounded-full flex-1"></div>
-                        <div className="h-2 bg-white/30 rounded-full w-20"></div>
-                      </div>
-                    </div>
+            <div className="aspect-[16/9] overflow-hidden bg-gray-100 relative">
+              <img
+                src="/images/sales_dashboard.png"
+                alt="Sales Intelligence"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/50 shadow-sm">
+                  <div className="text-xs text-gray-500 font-medium">
+                    Pipeline Value
                   </div>
-                  <div className="bg-white rounded-lg p-3 text-xs">
-                    <div className="flex justify-between mb-2">
-                      <span className="font-semibold text-gray-700">
-                        127 Qualified Leads
-                      </span>
-                      <span className="text-emerald-600 font-bold">
-                        $2.4M Pipeline
-                      </span>
-                    </div>
-                    <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-purple-500 to-blue-500 w-3/4"></div>
-                    </div>
-                  </div>
+                  <div className="text-sm font-bold text-gray-900">$2.4M</div>
                 </div>
               </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Accelerate Sales Cycles
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Sales teams use QubeAI to instantly surface relevant customer
-                data, previous interactions, and recommended next steps -
-                cutting research time by 75% and increasing conversion rates.
+
+            <div className="p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-indigo-50 rounded-lg text-indigo-600">
+                  <MessageSquare size={20} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  Sales Intelligence
+                </h3>
+              </div>
+
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                Surface high-value opportunities by correlating historical
+                closing data with current lead behavior, cutting research time
+                by 75%.
               </p>
-              <div className="flex items-center gap-4 text-sm">
-                <div className="flex items-center gap-1 text-emerald-600">
-                  <CheckCircle size={16} />
-                  <span className="font-semibold">75% faster</span>
+
+              <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                <div className="flex items-center gap-1.5 text-sm font-semibold text-gray-900">
+                  <Zap size={16} className="text-[#8C5FF5]" />
+                  3x Conversions
                 </div>
-                <div className="flex items-center gap-1 text-blue-600">
-                  <Zap size={16} />
-                  <span className="font-semibold">3x more conversions</span>
-                </div>
+                <button className="text-[#8C5FF5] text-sm font-semibold flex items-center gap-1 group/btn hover:gap-2 transition-all">
+                  View Case Study <span className="text-lg">→</span>
+                </button>
               </div>
             </div>
           </motion.div>
 
-          {/* Use Case 2 */}
+          {/* Use Case 2: Operations */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="group relative rounded-3xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-xl hover:shadow-blue-100/50 transition-all duration-500"
           >
-            <div className="relative h-64 bg-gradient-to-br from-purple-500 to-pink-600 p-8">
-              <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-              <div className="relative z-10">
-                <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-semibold mb-4">
-                  Operations Analytics
-                </div>
-                <div className="space-y-3">
-                  <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-white text-xs font-medium">
-                        Production Efficiency
-                      </span>
-                      <span className="text-emerald-300 text-sm font-bold">
-                        ↑ 23%
-                      </span>
-                    </div>
-                    <div className="h-2 bg-white/20 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-emerald-400 to-green-300 w-[92%]"></div>
-                    </div>
+            <div className="aspect-[16/9] overflow-hidden bg-gray-100 relative">
+              <img
+                src="/images/ops_dashboard.png"
+                alt="Operations Analytics"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/50 shadow-sm">
+                  <div className="text-xs text-gray-500 font-medium">
+                    Efficiency Gain
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20">
-                      <div className="text-white/70 text-xs mb-1">Downtime</div>
-                      <div className="text-white text-lg font-bold">-34%</div>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/20">
-                      <div className="text-white/70 text-xs mb-1">
-                        Cost Savings
-                      </div>
-                      <div className="text-white text-lg font-bold">$1.2M</div>
-                    </div>
-                  </div>
+                  <div className="text-sm font-bold text-emerald-600">+23%</div>
                 </div>
               </div>
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Optimize Operations
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Operations teams leverage QubeAI to identify bottlenecks,
-                predict maintenance needs, and optimize resource allocation
-                across the entire supply chain in real-time.
+
+            <div className="p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-blue-50 rounded-lg text-blue-600">
+                  <BarChart size={20} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">
+                  Operations Command
+                </h3>
+              </div>
+
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                Predict maintenance needs and optimize global supply chain
+                logistics, saving an average of $1.2M annually in operational
+                costs.
               </p>
-              <div className="flex items-center gap-4 text-sm">
-                <div className="flex items-center gap-1 text-purple-600">
-                  <BarChart size={16} />
-                  <span className="font-semibold">Real-time insights</span>
+
+              <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                <div className="flex items-center gap-1.5 text-sm font-semibold text-gray-900">
+                  <Shield size={16} className="text-blue-500" />
+                  Predictive Alerts
                 </div>
-                <div className="flex items-center gap-1 text-pink-600">
-                  <Shield size={16} />
-                  <span className="font-semibold">Predictive alerts</span>
-                </div>
+                <button className="text-blue-600 text-sm font-semibold flex items-center gap-1 group/btn hover:gap-2 transition-all">
+                  View Case Study <span className="text-lg">→</span>
+                </button>
               </div>
             </div>
           </motion.div>
