@@ -20,49 +20,63 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/qubeai.png" alt="QubeAI Logo" className="h-10" />
+          <img src="/qubeplatform.ai.png" alt="QubeAI Logo" className="h-10" />
         </div>
 
         <div className="hidden lg:flex items-center gap-6">
           <a
             href="#home"
-            className="text-sm font-medium text-gray-600 hover:text-[#8C5FF5] transition-colors"
+            className={`text-sm font-medium ${
+              scrolled ? "text-gray-600" : "text-white"
+            } hover:text-[#8C5FF5] transition-colors`}
           >
             Home
           </a>
           <a
             href="#product"
-            className="text-sm font-medium text-gray-600 hover:text-[#8C5FF5] transition-colors"
+            className={`text-sm font-medium ${
+              scrolled ? "text-gray-600" : "text-white"
+            } hover:text-[#8C5FF5] transition-colors`}
           >
             Product
           </a>
           <a
             href="#solutions"
-            className="text-sm font-medium text-gray-600 hover:text-[#8C5FF5] transition-colors"
+            className={`text-sm font-medium ${
+              scrolled ? "text-gray-600" : "text-white"
+            } hover:text-[#8C5FF5] transition-colors`}
           >
             Solutions
           </a>
           <a
             href="#use-cases"
-            className="text-sm font-medium text-gray-600 hover:text-[#8C5FF5] transition-colors"
+            className={`text-sm font-medium ${
+              scrolled ? "text-gray-600" : "text-white"
+            } hover:text-[#8C5FF5] transition-colors`}
           >
             Use Cases
           </a>
           <a
             href="#industries"
-            className="text-sm font-medium text-gray-600 hover:text-[#8C5FF5] transition-colors"
+            className={`text-sm font-medium ${
+              scrolled ? "text-gray-600" : "text-white"
+            } hover:text-[#8C5FF5] transition-colors`}
           >
             Industries
           </a>
           <a
             href="#see-how"
-            className="text-sm font-medium text-gray-600 hover:text-[#8C5FF5] transition-colors"
+            className={`text-sm font-medium ${
+              scrolled ? "text-gray-600" : "text-white"
+            } hover:text-[#8C5FF5] transition-colors`}
           >
             See How
           </a>
           <a
             href="#about"
-            className="text-sm font-medium text-gray-600 hover:text-[#8C5FF5] transition-colors"
+            className={`text-sm font-medium ${
+              scrolled ? "text-gray-600" : "text-white"
+            } hover:text-[#8C5FF5] transition-colors`}
           >
             About
           </a>

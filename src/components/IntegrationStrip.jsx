@@ -22,7 +22,7 @@ export const IntegrationStrip = () => {
   ];
 
   return (
-    <div className="relative z-20 -mt-16   mx-auto">
+    <div className="relative z-20    mx-auto">
       <motion.div
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

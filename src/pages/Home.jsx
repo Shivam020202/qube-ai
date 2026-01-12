@@ -1,5 +1,5 @@
 import React from "react";
-import { AuroraHero } from "../components/AuroraHero";
+import { SliderHero } from "../components/SliderHero";
 import { IntegrationStrip } from "../components/IntegrationStrip";
 import { motion } from "framer-motion";
 import {
@@ -699,7 +699,7 @@ function CallToAction() {
 export default function Home() {
   return (
     <>
-      <AuroraHero />
+      <SliderHero />
       <IntegrationStrip />
       <SolutionSection />
       <ProblemSection />
